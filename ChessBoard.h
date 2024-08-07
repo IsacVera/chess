@@ -8,7 +8,7 @@ class ChessBoard {
         void displayBoard() const;
 
     private:
-        int board[8][5];
+        int board[8][8];
 };
 
 #endif // !CHESSBOARD_H
