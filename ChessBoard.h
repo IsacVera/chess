@@ -1,10 +1,12 @@
 #ifndef CHESSBOARD_H
 #define CHESSBOARD_H
 
+#include <array>
 class ChessBoard {
     public:
         ChessBoard();
-        void resetBoard();
+        void setEmptyBoard();
+        std::array<std::array<char, 8>, 8> resetBoard();
         void displayBoard() const;
 
     private:
