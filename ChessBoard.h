@@ -6,11 +6,11 @@ class ChessBoard {
     public:
         ChessBoard();
         void setEmptyBoard();
-        std::array<std::array<char, 8>, 8> resetBoard();
+        void  resetBoard();
         void displayBoard() const;
 
     private:
-        int board[8][8];
+        char board[8][8];
 };
 
 #endif // !CHESSBOARD_H

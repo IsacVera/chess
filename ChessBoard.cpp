@@ -1,7 +1,9 @@
 #include "ChessBoard.h"
 #include "iostream"
 
-ChessBoard::ChessBoard() {}
+ChessBoard::ChessBoard() {
+    char board[8][8];
+}
 
 void ChessBoard::setEmptyBoard() {
     int length = sizeof(board) /sizeof(board[0]);
@@ -14,18 +16,23 @@ void ChessBoard::setEmptyBoard() {
 
 }
 
-std::array<std::array<char, 8>, 8> ChessBoard::resetBoard() {
-    std::array<std::array<char, 8>, 8> arr = {{
-        {'R','K','B','Q','K','B','K','R'},
+void ChessBoard::resetBoard() {
+    char initialBoard[8][8] = {
+        {'R','N','B','Q','K','B','N','R'},
         {'P','P','P','P','P','P','P','P'},
         {'0','0','0','0','0','0','0','0'},
         {'0','0','0','0','0','0','0','0'},
         {'0','0','0','0','0','0','0','0'},
         {'0','0','0','0','0','0','0','0'},
         {'P','P','P','P','P','P','P','P'},
-        {'R','K','B','K','Q','B','K','R'}
-    }};
-    return arr;
+        {'R','N','B','K','Q','B','N','R'}
+    };
+
+    for (int i=0; i<8; i++) {
+        for (int j=0; j<8; j++) {
+            board[i][j] = initialBoard[i][j];
+        }
+    }
 }
 
 void ChessBoard::displayBoard() const {
