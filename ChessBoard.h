@@ -1,7 +1,7 @@
 #ifndef CHESSBOARD_H
 #define CHESSBOARD_H
 
-#include <array>
+#include <string>
 class ChessBoard {
     public:
         ChessBoard();
@@ -10,7 +10,7 @@ class ChessBoard {
         void displayBoard() const;
 
     private:
-        char board[8][8];
+        std::string board[8][8];
 };
 
 #endif // !CHESSBOARD_H

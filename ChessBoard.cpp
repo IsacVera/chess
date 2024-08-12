@@ -1,8 +1,9 @@
 #include "ChessBoard.h"
 #include "iostream"
+#include <string>
 
 ChessBoard::ChessBoard() {
-    char board[8][8];
+    std::string board[8][8];
 }
 
 void ChessBoard::setEmptyBoard() {
@@ -17,15 +18,15 @@ void ChessBoard::setEmptyBoard() {
 }
 
 void ChessBoard::resetBoard() {
-    char initialBoard[8][8] = {
-        {'R','N','B','Q','K','B','N','R'},
-        {'P','P','P','P','P','P','P','P'},
-        {'0','0','0','0','0','0','0','0'},
-        {'0','0','0','0','0','0','0','0'},
-        {'0','0','0','0','0','0','0','0'},
-        {'0','0','0','0','0','0','0','0'},
-        {'P','P','P','P','P','P','P','P'},
-        {'R','N','B','K','Q','B','N','R'}
+    std::string initialBoard[8][8] = {
+        {"\u2656", "\u2658", "\u2657", "\u2655", "\u2654", "\u2657", "\u2658", "\u2656"}, 
+        {"\u2659", "\u2659", "\u2659", "\u2659", "\u2659", "\u2659", "\u2659", "\u2659"},
+        {" " , " ", " ", " ", " ", " ", " ", " "},
+        {" " , " ", " ", " ", " ", " ", " ", " "},
+        {" " , " ", " ", " ", " ", " ", " ", " "},
+        {" " , " ", " ", " ", " ", " ", " ", " "},
+        {"\u265F", "\u265F", "\u265F", "\u265F", "\u265F", "\u265F", "\u265F", "\u265F"},
+        {"\u265C", "\u265E", "\u265D", "\u265B", "\u265A", "\u265D", "\u265E", "\u265C"}
     };
 
     for (int i=0; i<8; i++) {
@@ -48,5 +49,7 @@ void ChessBoard::displayBoard() const {
         }
         std::cout << "" << std::endl;
     }
+
+    std::cout << std::endl;
 }
 
