@@ -36,20 +36,33 @@ void ChessBoard::resetBoard() {
     }
 }
 
-void ChessBoard::displayBoard() const {
-    int length = sizeof(board) /sizeof(board[0]);
-    int width = sizeof(board[0]) /sizeof(board[0][0]);
-    for (int i=0; i<length; i++) {
-        for (int j=0; j<width; j++) {
-            std::cout << i;
-            std::cout << j;
-            std::cout << "|";
-            std::cout << board[i][j];
-            std::cout << ' ';
-        }
-        std::cout << "" << std::endl;
-    }
 
-    std::cout << std::endl;
+
+void ChessBoard::displayBoard() const {
+    std::string boardDisplay = "   | A | B | C | D | E | F | G | H \n";
+    std::string rowNumber = "";
+
+    for (int i=1; i<=8; i++) {
+        boardDisplay += "___";
+        for(int j=0; j<8; j++) {
+            boardDisplay += "|___";
+        }
+        boardDisplay += "\n";
+
+        rowNumber = std::to_string(i);
+        boardDisplay += " " + rowNumber + " ";
+
+        for(int j=0; j<=7; j++) {
+            boardDisplay += "| " + board[i-1][j] + " ";
+        }
+        boardDisplay += "\n";
+    }
+    boardDisplay += "   ";
+    for (int i=1; i<=8; i++) {
+        boardDisplay += "|   ";
+    }
+    boardDisplay += "\n";
+
+    std::cout << boardDisplay << std::endl;
 }
 
