@@ -66,14 +66,19 @@ void ChessBoard::displayBoard() const {
     std::cout << boardDisplay << std::endl;
 }
 
-void ChessBoard::movePiece(std::string userInput){
-    int row = std::stoi(userInput.substr(1,2)) - 1;
+void ChessBoard::movePiece(std::string currentPosition, std::string desiredPosition){
+    int currRow = std::stoi(currentPosition.substr(1,2)) - 1;
+    int desRow = std::stoi(desiredPosition.substr(1,2)) - 1;
 
-    std::string colString = userInput.substr(0,1);
-    char col = (char)tolower(colString[0]);
-    int colNum = col - 'a';
+    std::string currColString = currentPosition.substr(0,1);
+    char currCol = (char)tolower(currColString[0]); //after creating sanitation of inputs delete tolower
+    int currColNum = currCol - 'a';
 
-    std::cout << board[row][colNum] << std::endl;
+    std::string desColString = desiredPosition.substr(0,1);
+    char desCol = (char)tolower(desColString[0]); //after creating sanitation of inputs delete tolower
+    int desColNum = desCol - 'a';
 
+    board[desRow][desColNum] = board[currRow][currColNum];
+    board[currRow][currColNum] = " ";
 }
 

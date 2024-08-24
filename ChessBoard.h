@@ -8,7 +8,7 @@ class ChessBoard {
         void setEmptyBoard();
         void resetBoard();
         void displayBoard() const;
-        void movePiece(std::string);
+        void movePiece(std::string, std::string);
 
     private:
         std::string board[8][8];

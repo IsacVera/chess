@@ -2,7 +2,8 @@
 #include "ChessBoard.h"
 
 int main() {
-    std::string userInput;
+    std::string currentPosition;
+    std::string desiredPosition;
 
     ChessBoard chessBoard;
     chessBoard.resetBoard();
@@ -10,8 +11,13 @@ int main() {
     chessBoard.displayBoard();
     
     std::cout << "Enter your postion: 'A8'" << std::endl;
-    std::cin >> userInput; 
+    std::cin >> currentPosition; 
+    std::cout << "Enter desired postion: 'A8'" << std::endl;
+    std::cin >> desiredPosition; 
 
-    chessBoard.movePiece(userInput);
+    chessBoard.movePiece(currentPosition, desiredPosition);
+
+    chessBoard.displayBoard();
+
     return 0;
 }
