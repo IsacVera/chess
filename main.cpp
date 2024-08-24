@@ -12,7 +12,6 @@ int main() {
     std::cout << "Enter your postion: 'A8'" << std::endl;
     std::cin >> userInput; 
 
-    std::cout << userInput;
-
+    chessBoard.movePiece(userInput);
     return 0;
 }

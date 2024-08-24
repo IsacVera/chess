@@ -66,3 +66,14 @@ void ChessBoard::displayBoard() const {
     std::cout << boardDisplay << std::endl;
 }
 
+void ChessBoard::movePiece(std::string userInput){
+    int row = std::stoi(userInput.substr(1,2)) - 1;
+
+    std::string colString = userInput.substr(0,1);
+    char col = (char)tolower(colString[0]);
+    int colNum = col - 'a';
+
+    std::cout << board[row][colNum] << std::endl;
+
+}
+
